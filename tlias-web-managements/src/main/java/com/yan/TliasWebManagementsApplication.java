@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class TliasWebManagementsApplication {
 
     public static void main(String[] args) {
+        System.out.println("nihao");
         SpringApplication.run(TliasWebManagementsApplication.class, args);
     }
 
