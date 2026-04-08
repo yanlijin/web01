@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.mapper.ClassMapper">
+
+
+    <select id="list" resultType="com.yan.pojo.Clazz">
+            select c.*,e.name masterName  from clazz c left join emp e  on c.master_id=e.id
+            <where>
+                <if test="name!=null and name!=''">
+                    c.name like concat('%',#{name},'%')
+                </if>
+                <if test="begin!=null and end!=null">
+                    and c.create_time between #{begin} and #{end}
+                </if>
+            </where>
+            order by c.update_time desc
+
+    </select>
+
+    <select id="get" resultType="com.yan.pojo.Clazz">
+        select c.*,e.name masterName from clazz c left join emp e on c.master_id=e.id where c.id=#{id}
+    </select>
+
+<!--    统计各班人数-->
+    <select id="countClassData" resultType="java.util.Map">
+        select c.name as pos,count(s.id) as num from clazz c left join student s on c.id=s.clazz_id group by c.id order by num;
+    </select>
+</mapper>

@@ -1,0 +1,26 @@
+package com.yan.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Clazz {
+    private Integer id;
+    private String name;
+    private String room;
+    private LocalDate beginDate;
+    private LocalDate endDate;
+    private Integer masterId;
+    private Integer subject;
+    private LocalDateTime createTime; //创建时间
+    private LocalDateTime updateTime; //修改时间
+    private String masterName;
+    private String status;
+}

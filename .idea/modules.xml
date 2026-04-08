@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ILAS.iml" filepath="$PROJECT_DIR$/ILAS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlias-web-managements/tlias-web-managements.iml" filepath="$PROJECT_DIR$/tlias-web-managements/tlias-web-managements.iml" />
+    </modules>
+  </component>
+</project>
